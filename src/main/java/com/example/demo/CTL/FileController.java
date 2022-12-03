@@ -62,6 +62,12 @@ public class FileController {
         System.out.println("file = " + file.get("file"));
     }
 
+    @ResponseBody
+    @GetMapping("/test")
+    public String test(String num1, String num2) {
+
+        return num1 + num2;
+    }
 }
 
 
