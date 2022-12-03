@@ -51,7 +51,6 @@ public class FileController {
         document.close();
         outputStream.close();
 
-
         return outputStream;
 
     }
@@ -64,12 +63,13 @@ public class FileController {
 
     @ResponseBody
     @GetMapping("/test")
-    public String test(String num1, String num2) {
+    public FileVO test() {
+        // 빌더 패턴 사용하여 객체를 생성 시 생성자가 3개인데, 필요한 값만 넣어서 객체를 생성 할 수 있다. 즉, null 값을 넣어주지 않아도 객체생성이 가능하다.
+        FileVO file = FileVO.builder().id("id").pw("1234").build();
 
-        return num1 + num2;
+        return file;
     }
 }
-
 
 
 
